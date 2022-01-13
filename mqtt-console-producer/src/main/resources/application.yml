@@ -1,0 +1,29 @@
+# Spring Boot
+spring:
+  banner:
+    location: banner.txt
+
+# Camel Spring Boot
+camel:
+  springboot:
+    name: mqtt-console-producer
+    main-run-controller: true
+  ssl:
+    config:
+      trust-managers:
+        key-store:
+          resource: "../client.ts"
+          password: "abcd1234"
+      secure-socket-protocol: "TLSv1.2"
+  component:
+    paho:
+      broker-url: "ssl://localhost:8883"
+      client-id: "mqtt-console-producer"
+      user-name: "alice"
+      password: "bosco"
+
+# Logging
+logging:
+  level:
+    root: ERROR
+    #org.apache.camel.examples: DEBUG
