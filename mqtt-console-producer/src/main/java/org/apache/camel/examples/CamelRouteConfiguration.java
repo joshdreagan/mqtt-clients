@@ -78,7 +78,7 @@ public class CamelRouteConfiguration extends RouteBuilder {
     ;
 
     from("direct:enqueue")
-      .to(ExchangePattern.InOnly, "paho://{{mqtt.destination.name}}")
+      .to(ExchangePattern.InOnly, "paho://{{mqtt.destination.name}}?autoReconnect=true")
     ;
   }
 }

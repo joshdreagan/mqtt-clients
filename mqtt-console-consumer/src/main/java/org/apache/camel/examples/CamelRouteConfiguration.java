@@ -67,7 +67,7 @@ public class CamelRouteConfiguration extends RouteBuilder {
   @Override
   public void configure() {
 
-    from("paho://{{mqtt.destination.name}}")
+    from("paho://{{mqtt.destination.name}}?autoReconnect=true")
       .setHeader("MqttMessageSize").exchange((exchange) -> {
         return exchange.getIn().getBody(MqttMessage.class).getPayload().length;
       })

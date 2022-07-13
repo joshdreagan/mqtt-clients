@@ -11,7 +11,7 @@ mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker
 __SSL__
 
 ```
-mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker-url=tcp://localhost:8883' '-Dcamel.component.paho.user-name=alice' '-Dcamel.component.paho.password=bosco' '-Dcamel.ssl.config.trust-managers.key-store=../client.ts' '-Dcamel.ssl.config.trust-managers.key-store-password=abcd1234'
+mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker-url=ssl://localhost:8883' '-Dcamel.component.paho.user-name=alice' '-Dcamel.component.paho.password=bosco' '-Dcamel.ssl.config.trust-managers.key-store.resource=../client.ts' '-Dcamel.ssl.config.trust-managers.key-store.password=abcd1234'
 ```
 
 ## Consumer
@@ -25,5 +25,5 @@ mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker
 __SSL__
 
 ```
-mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker-url=tcp://localhost:8883' '-Dcamel.component.paho.user-name=bob' '-Dcamel.component.paho.password=bosco' '-Dcamel.ssl.config.trust-managers.key-store=../client.ts' '-Dcamel.ssl.config.trust-managers.key-store-password=abcd1234'
+mvn spring-boot:run '-Dmqtt.destination.name=foo' '-Dcamel.component.paho.broker-url=ssl://localhost:8883' '-Dcamel.component.paho.user-name=bob' '-Dcamel.component.paho.password=bosco' '-Dcamel.ssl.config.trust-managers.key-store.resource=../client.ts' '-Dcamel.ssl.config.trust-managers.key-store.password=abcd1234'
 ```
